@@ -48,6 +48,23 @@ h2 {
     width: 270px;
 }
 
+.tarjeta:hover {
+    animation: animarEntrada 2s ease;
+}
+
+/* Animación de entrada */
+@keyframes animarEntrada {
+    0% {
+        transform: translateY(50px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .tarjetaSvg {
     background-color: white;
     padding: 30px;
