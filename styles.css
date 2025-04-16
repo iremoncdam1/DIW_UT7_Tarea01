@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.presentacion {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+h2 {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.linea {
+    border: none; 
+    height: 1px; 
+    background-color: black; 
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+
+
+.mascotas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+}
+
+.tarjeta {
+    background-color: rgba(100,100,100,0.2);
+    padding: 20px;
+    border-radius: 20px;
+    width: 270px;
+}
+
+.tarjetaSvg {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    height: 60%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjetaInfo {
+    padding: 10px;
+    height: 30%; 
+}
+
+
+/*   Perro   */
+/* La lengua no se ve por defecto */
+.lengua {
+    opacity: 0;
+}
+
+/* Al hacer hover en la tarjeta del perro, se hace la animación de la lengua */
+.tarjeta:hover .lengua {
+    animation: sacarLengua 0.5s forwards;
+}
+
+@keyframes sacarLengua {
+    0% {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+
+
+/*   Gato   */
+/* Ocultamos el gato con lengua por defecto */
+.gatoLengua {
+    display: none;
+}
+  
+/* Al hacer hover en la card, ocultamos el gato normal y mostramos el otro*/
+.tarjeta:hover .gatoNormal {
+    display: none;
+}
+
+.tarjeta:hover .gatoLengua {
+    display: block;
+}
+
+
+/*   Gato 2   */
+.contornoGato {
+    stroke: black;
+    stroke-width: 2;
+    stroke-dasharray: 900;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 2s ease;
+}
+
+.tarjeta:hover .contornoGato {
+    stroke-dashoffset: 0;
+}
+
+
+
+.adoptarBtn {
+    background-color: black;    
+    color: white;
+    border-radius: 30px;
+    padding: 15px;
+    width: 70%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 70%; 
+    display: block; 
+    margin: 80px auto 40px auto; 
+}
+.adoptarBtn:hover {
+    transform: scale(1.1);
+}
+
+
+
+@media (min-width: 1024px) {
+    .mascotas {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tarjeta {
+        flex: 1 1 calc(33.33% - 40px);
+        max-width: 300px;
+        margin: 10px;
+    }
+}
